@@ -12,7 +12,7 @@ export type Advisor = {
 }
 
 export const advisors: Advisor[] = [
-  { id: 'fazal', name: 'Fazal Mumtaz', initials: 'FM', role: 'Senior Advisor', clients: 42, arrManaged: 38_400_000, openActions: 18, slaWithin: 92, acceptanceRate: 74, upliftMTD: 184_000 },
+  { id: 'john', name: 'John Doe', initials: 'JD', role: 'Senior Advisor', clients: 42, arrManaged: 38_400_000, openActions: 18, slaWithin: 92, acceptanceRate: 74, upliftMTD: 184_000 },
   { id: 'priya', name: 'Priya Khatri', initials: 'PK', role: 'Advisor', clients: 38, arrManaged: 22_700_000, openActions: 22, slaWithin: 88, acceptanceRate: 71, upliftMTD: 142_000 },
   { id: 'adam', name: 'Adam Trent', initials: 'AT', role: 'Advisor', clients: 34, arrManaged: 26_100_000, openActions: 14, slaWithin: 95, acceptanceRate: 68, upliftMTD: 168_000 },
   { id: 'leila', name: 'Leila Okonkwo', initials: 'LO', role: 'Associate', clients: 28, arrManaged: 31_200_000, openActions: 20, slaWithin: 84, acceptanceRate: 64, upliftMTD: 118_000 },

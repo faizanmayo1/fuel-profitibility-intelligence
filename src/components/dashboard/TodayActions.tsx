@@ -32,7 +32,7 @@ export function TodayActions() {
             <h3 className="text-[15px] font-semibold tracking-tight-bank text-ink">
               Today&apos;s advisory actions
             </h3>
-            <p className="text-xs text-ink-muted">Generated for Fazal · 5 items</p>
+            <p className="text-xs text-ink-muted">Generated for John · 5 items</p>
           </div>
         </div>
         <Badge variant="positive" className="self-center">

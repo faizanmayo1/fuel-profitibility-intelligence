@@ -254,10 +254,10 @@ function Sidebar({
           className="flex w-full items-center gap-2.5 rounded-md p-1.5 text-left hover:bg-canvas-subtle"
         >
           <div className="grid h-8 w-8 place-items-center rounded-full bg-sovereign text-canvas text-xs font-semibold tabular">
-            FM
+            JD
           </div>
           <div className="min-w-0 flex-1">
-            <p className="truncate text-sm font-medium text-ink">Fazal Mumtaz</p>
+            <p className="truncate text-sm font-medium text-ink">John Doe</p>
             <p className="truncate text-xs text-ink-subtle">Senior Advisor · NSW</p>
           </div>
           <ChevronDown className="h-4 w-4 text-ink-subtle" />

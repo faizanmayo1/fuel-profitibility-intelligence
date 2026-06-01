@@ -83,7 +83,7 @@ export const sampleEmail = {
     "I've drafted the customer outreach sequence in our queue — happy to send on your approval. Easiest is a 20-minute call this week to walk through both. Tuesday or Thursday afternoon work for you?",
     "",
     "Cheers,",
-    "Fazal",
+    "John",
   ].join('\n'),
 }
 

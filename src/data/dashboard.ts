@@ -4,7 +4,7 @@ export const dashboardMeta = {
   tenant: 'Fuel Accountants · Sydney',
   asOf: '1 Jun 2026',
   syncedMinutesAgo: 3,
-  advisorName: 'Fazal',
+  advisorName: 'John',
   totalClients: 142,
 }
 

@@ -112,7 +112,7 @@ export function AutoReporting() {
 
             <div className="space-y-4 px-5 py-4">
               <div className="rounded-md border border-emerald/20 bg-emerald/8 p-3 text-[12px] text-emerald-deep">
-                <span className="font-medium">AI-written commentary ·</span> reviewed and approved by Fazal Mumtaz · 2 hours ago.
+                <span className="font-medium">AI-written commentary ·</span> reviewed and approved by John Doe · 2 hours ago.
               </div>
 
               {sampleNarrative.paragraphs.map((p, i) => (

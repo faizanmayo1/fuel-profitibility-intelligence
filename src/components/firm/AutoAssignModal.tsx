@@ -23,7 +23,7 @@ const initialSuggestions: Suggestion[] = [
     industry: 'Construction',
     signal: 'Cash stress',
     exposure: '$84k · 21d',
-    advisorId: 'fazal',
+    advisorId: 'john',
     reason: 'Existing client owner · construction expertise · 18d since last touch',
   },
   {

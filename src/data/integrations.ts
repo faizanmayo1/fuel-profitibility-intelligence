@@ -147,7 +147,7 @@ export type AuditEntry = {
 }
 
 export const auditLog: AuditEntry[] = [
-  { id: 'a1', actor: 'Fazal Mumtaz', action: 'Added Xero connector', detail: 'VelocityX Marketing · OAuth scope: read-write', agoLabel: '2 days ago', tone: 'info' },
+  { id: 'a1', actor: 'John Doe', action: 'Added Xero connector', detail: 'VelocityX Marketing · OAuth scope: read-write', agoLabel: '2 days ago', tone: 'info' },
   { id: 'a2', actor: 'Priya Khatri', action: 'Rotated MYOB API key', detail: 'Northbay Café Group · scheduled rotation', agoLabel: '5 days ago', tone: 'info' },
   { id: 'a3', actor: 'System', action: 'Auto-resolved sync conflict', detail: 'Mintwell Retail · duplicate invoice de-duped', agoLabel: '1 week ago', tone: 'neutral' },
   { id: 'a4', actor: 'Adam Trent', action: 'Approved data retention policy', detail: '7-year retention · AU compliance', agoLabel: '2 weeks ago', tone: 'info' },

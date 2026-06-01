@@ -17,7 +17,7 @@ export const redhill = {
   region: 'Sydney · NSW',
   fyEnd: '30 June',
   ownerContact: 'Marcus Lloyd · CFO',
-  fuelAdvisor: 'Fazal Mumtaz',
+  fuelAdvisor: 'John Doe',
   arr: 2_400_000,
   health: 'Critical' as const,
   healthScore: 38,
