@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Fuel — light premium SaaS theme (shadcn semantic tokens, HSL channels) */
+
+    --background: 210 25% 98%;          /* canvas #F7F9FB */
+    --foreground: 220 48% 8%;           /* ink primary #0B1220 */
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 48% 8%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 48% 8%;
+
+    --primary: 211 70% 17%;             /* sovereign navy #0E2C4A */
+    --primary-foreground: 210 25% 98%;
+
+    --secondary: 215 22% 95%;
+    --secondary-foreground: 220 48% 8%;
+
+    --muted: 215 22% 96%;
+    --muted-foreground: 218 18% 34%;
+
+    --accent: 215 22% 95%;
+    --accent-foreground: 220 48% 8%;
+
+    --destructive: 0 73% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 213 21% 91%;              /* hairline #E4E9EF */
+    --input: 213 21% 91%;
+    --ring: 211 70% 17%;
+
+    --radius: 0.625rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    @apply bg-canvas text-ink font-sans antialiased;
+    font-feature-settings: 'ss01', 'cv11';
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .tabular,
+  [data-tabular] {
+    font-variant-numeric: tabular-nums;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply text-ink tracking-tight-bank;
+    font-weight: 600;
+  }
+
+  ::selection {
+    background-color: hsl(211 70% 17% / 0.12);
+    color: hsl(220 48% 8%);
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(213 12% 80%);
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    border-radius: 999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(213 12% 65%);
+    background-clip: padding-box;
+    border: 2px solid transparent;
+  }
+}
+
+@layer utilities {
+  .divider-hairline {
+    background-image: linear-gradient(to right, transparent, hsl(213 21% 86%), transparent);
+    height: 1px;
+  }
+
+  .eyebrow {
+    @apply text-[11px] font-medium uppercase tracking-wide-eyebrow text-ink-subtle;
+  }
+
+  .ring-sovereign-soft {
+    box-shadow: 0 0 0 4px hsl(211 70% 17% / 0.08);
+  }
+
+  .ring-emerald-soft {
+    box-shadow: 0 0 0 4px hsl(164 84% 31% / 0.10);
+  }
+}

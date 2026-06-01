@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fuel · Profitability Intelligence — Product Summary</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --navy: #0e2c4a;
+        --navy-deep: #081b31;
+        --emerald: #0e8f6e;
+        --emerald-deep: #0a6e55;
+        --emerald-soft: #d6f0e6;
+        --canvas: #f7f9fb;
+        --canvas-subtle: #eef2f6;
+        --ink: #0b1220;
+        --ink-muted: #475467;
+        --ink-subtle: #8a93a2;
+        --hairline: #e4e9ef;
+        --hairline-strong: #d2d9e1;
+        --warning: #d97706;
+        --risk: #dc2626;
+      }
+
+      * { box-sizing: border-box; }
+
+      html, body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        color: var(--ink);
+        font-size: 11.5pt;
+        line-height: 1.5;
+        background: var(--canvas);
+        -webkit-font-smoothing: antialiased;
+        font-feature-settings: 'ss01', 'cv11';
+      }
+
+      .page {
+        max-width: 880px;
+        margin: 0 auto;
+        padding: 56px 60px;
+        background: #ffffff;
+        min-height: 100vh;
+      }
+
+      /* ─── Cover ─────────────────────────── */
+      .cover {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding-bottom: 28px;
+        border-bottom: 1px solid var(--hairline);
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+      .mark {
+        width: 56px;
+        height: 56px;
+        border-radius: 12px;
+        background: var(--navy);
+        color: var(--canvas);
+        display: grid;
+        place-items: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .mark::after {
+        content: '';
+        position: absolute;
+        bottom: -6px;
+        right: -2px;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background: var(--emerald);
+        opacity: 0.9;
+        filter: blur(2px);
+      }
+      .mark svg { width: 26px; height: 26px; position: relative; z-index: 1; }
+      .brand-text .name {
+        font-size: 24pt;
+        font-weight: 600;
+        letter-spacing: -0.018em;
+        line-height: 1;
+      }
+      .brand-text .name .dot { color: var(--emerald); }
+      .brand-text .tagline {
+        margin-top: 6px;
+        font-size: 10.5pt;
+        color: var(--ink-subtle);
+      }
+      .meta {
+        text-align: right;
+        font-size: 9.5pt;
+        color: var(--ink-subtle);
+      }
+      .meta .doc-type {
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-size: 8.5pt;
+        font-weight: 500;
+        color: var(--ink-muted);
+      }
+      .meta .doc-title {
+        margin-top: 4px;
+        font-size: 14pt;
+        font-weight: 600;
+        color: var(--ink);
+        letter-spacing: -0.014em;
+      }
+      .meta .doc-date {
+        margin-top: 6px;
+      }
+
+      /* ─── Section headings ──────────────── */
+      .eyebrow {
+        font-size: 8.5pt;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--ink-subtle);
+      }
+      h2 {
+        margin: 8px 0 0;
+        font-size: 17pt;
+        font-weight: 600;
+        letter-spacing: -0.018em;
+        color: var(--ink);
+      }
+      h3 {
+        margin: 0 0 4px;
+        font-size: 12pt;
+        font-weight: 600;
+        color: var(--ink);
+        letter-spacing: -0.012em;
+      }
+      p { margin: 0; }
+      .section { margin-top: 36px; }
+      .section .lede {
+        margin-top: 14px;
+        font-size: 11.5pt;
+        color: var(--ink-muted);
+        line-height: 1.7;
+      }
+
+      /* ─── Summary card ──────────────────── */
+      .summary-card {
+        margin-top: 18px;
+        padding: 22px 24px;
+        border: 1px solid var(--hairline);
+        border-left: 3px solid var(--emerald);
+        background: linear-gradient(180deg, #ffffff, #fafcfb);
+        border-radius: 8px;
+      }
+      .summary-card p {
+        color: var(--ink);
+        font-size: 11.5pt;
+        line-height: 1.7;
+      }
+
+      /* ─── Capability strip ──────────────── */
+      .capabilities {
+        margin-top: 18px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+      }
+      .cap-chip {
+        padding: 10px 12px;
+        border: 1px solid var(--hairline);
+        border-radius: 6px;
+        font-size: 9.5pt;
+        color: var(--ink-muted);
+        background: #fff;
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+      }
+      .cap-chip .num {
+        font-weight: 600;
+        color: var(--navy);
+        font-variant-numeric: tabular-nums;
+        font-size: 9.5pt;
+      }
+      .cap-chip .label {
+        font-weight: 500;
+        color: var(--ink);
+      }
+
+      /* ─── Screen list ───────────────────── */
+      .screens { margin-top: 22px; }
+      .screen {
+        padding: 16px 0;
+        border-top: 1px solid var(--hairline);
+        display: grid;
+        grid-template-columns: 36px 1fr;
+        gap: 14px;
+        page-break-inside: avoid;
+      }
+      .screen:first-child { border-top: 0; padding-top: 4px; }
+      .screen-num {
+        font-variant-numeric: tabular-nums;
+        font-size: 9.5pt;
+        font-weight: 600;
+        color: var(--canvas);
+        background: var(--navy);
+        height: 28px;
+        width: 28px;
+        border-radius: 6px;
+        display: grid;
+        place-items: center;
+        margin-top: 2px;
+      }
+      .screen-head {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: 8px;
+        margin-bottom: 4px;
+      }
+      .screen-name {
+        font-size: 12pt;
+        font-weight: 600;
+        color: var(--ink);
+        letter-spacing: -0.012em;
+      }
+      .route {
+        font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+        font-size: 8.5pt;
+        color: var(--emerald-deep);
+        background: var(--emerald-soft);
+        padding: 1.5px 6px;
+        border-radius: 4px;
+      }
+      .demo-tag {
+        font-size: 8pt;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--navy);
+        background: rgba(14, 44, 74, 0.08);
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+      .screen-purpose {
+        color: var(--ink-muted);
+        font-size: 10.5pt;
+        line-height: 1.6;
+      }
+
+      /* ─── Footer ────────────────────────── */
+      .footer {
+        margin-top: 48px;
+        padding-top: 18px;
+        border-top: 1px solid var(--hairline);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 9pt;
+        color: var(--ink-subtle);
+      }
+      .footer .pill {
+        background: var(--canvas-subtle);
+        padding: 4px 8px;
+        border-radius: 999px;
+        color: var(--ink-muted);
+      }
+
+      /* ─── Print ─────────────────────────── */
+      @page { size: A4; margin: 0; }
+      @media print {
+        html, body { background: #fff; }
+        .page { padding: 36px 44px; }
+        .screen { page-break-inside: avoid; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <!-- ─── Cover ─────────────────────────────────────── -->
+      <header class="cover">
+        <div class="brand">
+          <div class="mark" aria-hidden>
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M7 4h10v3.2H10.4v3.4h5.4v3.1h-5.4V20H7V4Z" fill="currentColor" />
+            </svg>
+          </div>
+          <div class="brand-text">
+            <p class="name">Fuel<span class="dot">.</span></p>
+            <p class="tagline">Profitability Intelligence &amp; Advisory Platform</p>
+          </div>
+        </div>
+        <div class="meta">
+          <p class="doc-type">Product summary</p>
+          <p class="doc-title">For Fuel Accountants</p>
+          <p class="doc-date">June 2026 · v1.0 demo</p>
+        </div>
+      </header>
+
+      <!-- ─── Product summary ──────────────────────────── -->
+      <section class="section">
+        <p class="eyebrow">What Fuel does</p>
+        <h2>Real-time profitability intelligence for accounting firms</h2>
+        <div class="summary-card">
+          <p>
+            Fuel transforms accounting firms from reactive monthly reporters into proactive
+            real-time CFO advisors. It unifies bookkeeping, payroll, GST, bank feeds, invoicing,
+            and expense data into a single live financial model for every client &mdash; with no
+            manual reconciliation cycles. The AI layer continuously detects margin leakage,
+            cash-flow stress, payroll drift, and tax exposure, then generates ranked next-best
+            actions for advisors to act on. Auto-written P&amp;L narratives, BAS packs, and client
+            emails replace static month-end reports with continuous financial storytelling. Built
+            natively for AU/NZ firms with Xero, MYOB, QuickBooks, KeyPay, NetPayroll, and ATO BAS
+            integrations, Fuel lets advisory firms scale CFO-grade service across hundreds of
+            clients without adding headcount.
+          </p>
+        </div>
+
+        <div class="capabilities">
+          <div class="cap-chip"><span class="num">142</span><span class="label">clients under live intelligence</span></div>
+          <div class="cap-chip"><span class="num">10</span><span class="label">connected data sources</span></div>
+          <div class="cap-chip"><span class="num">12.8k</span><span class="label">events/day · 99.8% uptime</span></div>
+          <div class="cap-chip"><span class="num">$612k</span><span class="label">advisor uplift this month</span></div>
+          <div class="cap-chip"><span class="num">71%</span><span class="label">AI recommendation acceptance</span></div>
+          <div class="cap-chip"><span class="num">38h</span><span class="label">advisor hours saved / month</span></div>
+        </div>
+      </section>
+
+      <!-- ─── Screens ────────────────────────────────── -->
+      <section class="section">
+        <p class="eyebrow">The product · 12 screens</p>
+        <h2>What each screen does</h2>
+
+        <div class="screens">
+          <article class="screen">
+            <div class="screen-num">01</div>
+            <div>
+              <div class="screen-head">
+                <span class="screen-name">Advisor Dashboard</span>
+                <span class="route">/</span>
+                <span class="demo-tag">Demo hero</span>
+              </div>
+              <p class="screen-purpose">
+                The advisor&rsquo;s morning landing page. Surfaces a ranked priority queue of clients
+                needing attention today, cross-portfolio AI signals, today&rsquo;s advisory actions, and
+                realised uplift &mdash; so the team knows who to call first before opening any other tab.
+              </p>
+            </div>
+          </article>
+
+          <article class="screen">
+            <div class="screen-num">02</div>
+            <div>
+              <div class="screen-head">
+                <span class="screen-name">Client Portfolio</span>
+                <span class="route">/clients</span>
+              </div>
+              <p class="screen-purpose">
+                Full searchable book of all 142 clients with live health scores, segments, top
+                alerts, and integration sources. Live filters by segment, industry, health band, and
+                advisor &mdash; one click drills into any client&rsquo;s workspace.
+              </p>
+            </div>
+          </article>
+
+          <article class="screen">
+            <div class="screen-num">03</div>
+            <div>
+              <div class="screen-head">
+                <span class="screen-name">Client Workspace</span>
+                <span class="route">/client/:slug</span>
+                <span class="demo-tag">Demo hero</span>
+              </div>
+              <p class="screen-purpose">
+                Single-client deep dive. Live financial ledger, composite health score with driver
+                breakdown, 42-day cash projection with shortfall window, AR aging by bucket, AI
+                root-cause panel, recommended actions, and the live sync feed proving no manual
+                reconciliation.
+              </p>
+            </div>
+          </article>
+
+          <article class="screen">
+            <div class="screen-num">04</div>
+            <div>
+              <div class="screen-head">
+                <span class="screen-name">Profitability Leaks</span>
+                <span class="route">/profitability</span>
+              </div>
+              <p class="screen-purpose">
+                Portfolio-wide margin leak detection grouped by root cause &mdash; pricing, cost
+                inflation, labor inefficiency, or cash-timing mismatch. Each leak is service-line
+                attributed, confidence-scored, and benchmarked against AU/NZ industry baselines.
+              </p>
+            </div>
+          </article>
+
+          <article class="screen">
+            <div class="screen-num">05</div>
+            <div>
+              <div class="screen-head">
+                <span class="screen-name">Cash-flow Risk</span>
+                <span class="route">/cashflow</span>
+              </div>
+              <p class="screen-purpose">
+                Predictive 30 / 60 / 90-day cash stress board with a runway leaderboard ranking
+                clients by days-to-zero. Live scenario simulator visualises &ldquo;invoices delayed 10
+                days&rdquo; and &ldquo;payroll +15%&rdquo; on the cash trajectory to pre-empt shortfalls.
+              </p>
+            </div>
+          </article>
+
+          <article class="screen">
+            <div class="screen-num">06</div>
+            <div>
+              <div class="screen-head">
+                <span class="screen-name">Payroll &amp; Expense</span>
+                <span class="route">/payroll</span>
+              </div>
+              <p class="screen-purpose">
+                Detects payroll efficiency drift and expense leakage. Tracks labor-ratio versus
+                benchmark, payroll-vs-revenue index, overtime spikes, vendor concentration,
+                subscription waste, and duplicate-bill anomalies across the book.
+              </p>
+            </div>
+          </article>
+
+          <article class="screen">
+            <div class="screen-num">07</div>
+            <div>
+              <div class="screen-head">
+                <span class="screen-name">Tax &amp; GST Risk</span>
+                <span class="route">/tax</span>
+              </div>
+              <p class="screen-purpose">
+                Quarterly BAS readiness across the entire book. Shows predicted GST liability versus
+                current tax reserve per client, shortfall projection, and AI-surfaced missed
+                deductions backed against the ATO ruling library.
+              </p>
+            </div>
+          </article>
+
+          <article class="screen">
+            <div class="screen-num">08</div>
+            <div>
+              <div class="screen-head">
+                <span class="screen-name">Advisory Recommendations</span>
+                <span class="route">/advisory</span>
+              </div>
+              <p class="screen-purpose">
+                AI-ranked Next Best Action queue for the whole portfolio. Recommendations span
+                pricing, cost reduction, payroll, tax efficiency, and cash management &mdash; with a
+                Profit First allocation simulator and a realised-uplift acceptance funnel.
+              </p>
+            </div>
+          </article>
+
+          <article class="screen">
+            <div class="screen-num">09</div>
+            <div>
+              <div class="screen-head">
+                <span class="screen-name">Auto Reporting</span>
+                <span class="route">/reports</span>
+              </div>
+              <p class="screen-purpose">
+                Continuous financial reporting. AI writes monthly P&amp;L narratives, BAS packs, board
+                packs, and cash-flow commentary in plain English &mdash; with variance explanations
+                tied to drivers, ready for advisor review and PDF export to the client.
+              </p>
+            </div>
+          </article>
+
+          <article class="screen">
+            <div class="screen-num">10</div>
+            <div>
+              <div class="screen-head">
+                <span class="screen-name">Client Comms</span>
+                <span class="route">/comms</span>
+              </div>
+              <p class="screen-purpose">
+                AI-drafted client emails and monthly advisory summaries, triggered automatically by
+                alerts and recommendations. Four tone modes (Plain, Warm, Direct, Formal) tuned per
+                client so the message lands the way they prefer to be spoken to.
+              </p>
+            </div>
+          </article>
+
+          <article class="screen">
+            <div class="screen-num">11</div>
+            <div>
+              <div class="screen-head">
+                <span class="screen-name">Firm Operations</span>
+                <span class="route">/firm</span>
+              </div>
+              <p class="screen-purpose">
+                Firm-wide advisor workload, SLA tracking, performance leaderboard, and client
+                segmentation. A one-click Auto-assign flow rebalances high-risk clients across
+                advisors based on expertise, capacity, and SLA window.
+              </p>
+            </div>
+          </article>
+
+          <article class="screen">
+            <div class="screen-num">12</div>
+            <div>
+              <div class="screen-head">
+                <span class="screen-name">Integrations &amp; Data Architecture</span>
+                <span class="route">/integrations</span>
+              </div>
+              <p class="screen-purpose">
+                The platform layer. 10 connected sources with sync health and event volume, a live
+                event stream showing every inbound transaction and its downstream recalculation,
+                throughput chart, multi-tenant compliance posture, and an immutable audit log.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ─── Footer ─────────────────────────────────── -->
+      <footer class="footer">
+        <span>Fuel Accountants · Profitability Intelligence Platform</span>
+        <span class="pill">Demo tenant · Sydney · v1.0</span>
+      </footer>
+    </div>
+  </body>
+</html>
